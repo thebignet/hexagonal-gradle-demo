@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':domain')
+    compile project(':service-locator')
+    runtime "org.slf4j:slf4j-simple:1.7.25"
+    compile "io.ratpack:ratpack-core:1.5.0-rc-2"
+}

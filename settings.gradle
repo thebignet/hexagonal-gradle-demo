@@ -1,0 +1,9 @@
+rootProject.name = 'hexagonal-gradle-demo'
+
+include 'domain'
+include 'persistence'
+include 'twitter-connector'
+include 'facebook-connector'
+include 'webserver'
+include 'app'
+include 'service-locator'

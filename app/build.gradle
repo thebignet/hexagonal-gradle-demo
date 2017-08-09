@@ -1,0 +1,11 @@
+apply plugin: 'application'
+mainClassName = 'org.detoeuf.hexagonal.domain.BlogApp'
+
+dependencies {
+    runtime project(':domain')
+    runtime project(':facebook-connector')
+    runtime project(':twitter-connector')
+    runtime project(':persistence')
+    runtime project(':webserver')
+}
+
