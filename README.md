@@ -9,6 +9,12 @@ This repository is an sample of an implementation of [Hexagonal Architecture](ht
 gradle :app run
 ```
 
+To make a new post go to http://localhost:5050/post/title/text
+
+To read this post, go to http://localhost:5050/article/title
+
+To share this post, go to http://localhost:5050/share/title/Twitter or http://localhost:5050/share/title/Facebook
+
 # Modules
 It is comprised of several modules
 
