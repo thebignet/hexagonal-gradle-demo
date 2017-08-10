@@ -4,6 +4,11 @@ Example architecture with Gradle and Java
 # Introduction
 This repository is an sample of an implementation of [Hexagonal Architecture](http://alistair.cockburn.us/Hexagonal+architecture) in Java using Gradle as a build system.  It is different from [layered architecture](https://en.wikipedia.org/wiki/Multitier_architecture) as the domain is central and other modules are only there to allow the domain to communicate with the outside world.
 
+# Running the application 
+```
+gradle :app run
+```
+
 # Modules
 It is comprised of several modules
 
