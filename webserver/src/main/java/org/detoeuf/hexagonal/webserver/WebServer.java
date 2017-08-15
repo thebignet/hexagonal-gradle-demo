@@ -1,4 +1,4 @@
-package org.detoeuf.hexagonal.servicelocator;
+package org.detoeuf.hexagonal.webserver;
 
 import org.detoeuf.hexagonal.domain.Blog;
 import org.detoeuf.hexagonal.domain.BlogPost;
