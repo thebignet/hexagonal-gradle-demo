@@ -1,11 +1,12 @@
 apply plugin: 'application'
-mainClassName = 'org.detoeuf.hexagonal.domain.BlogApp'
+mainClassName = 'org.detoeuf.hexagonal.app.BlogApp'
+
+javaModule.name = 'org.detoeuf.hexagonal.app'
 
 dependencies {
-    runtime project(':domain')
-    runtime project(':facebook-connector')
-    runtime project(':twitter-connector')
-    runtime project(':persistence')
-    runtime project(':webserver')
+    compile project(':domain')
+    runtimeOnly project(':facebook-connector')
+    runtimeOnly project(':twitter-connector')
+    runtimeOnly project(':persistence')
+    runtimeOnly project(':webserver')
 }
-

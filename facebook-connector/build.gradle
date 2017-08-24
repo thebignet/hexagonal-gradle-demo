@@ -1,4 +1,5 @@
+javaModule.name = 'org.detoeuf.hexagonal.facebook'
+
 dependencies {
-    compile project(':domain')
-    compile project(':service-locator')
+    api project(':domain')
 }

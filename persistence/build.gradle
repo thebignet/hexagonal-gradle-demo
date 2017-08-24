@@ -1,4 +1,5 @@
+javaModule.name = 'org.detoeuf.hexagonal.persistence'
+
 dependencies {
-    compile project(':domain')
-    compile project(':service-locator')
+    api project(':domain')
 }

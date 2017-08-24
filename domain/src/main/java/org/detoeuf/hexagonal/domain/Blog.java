@@ -1,17 +1,20 @@
 package org.detoeuf.hexagonal.domain;
 
-import org.detoeuf.hexagonal.servicelocator.ServiceLocator;
-
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class Blog {
     private final Persistence persistence;
     private final Collection<SocialMedia> socialMedias;
 
     public Blog() {
-        this.persistence = ServiceLocator.lookup(Persistence.class).orElseThrow(RuntimeException::new);
-        this.socialMedias = ServiceLocator.collection(SocialMedia.class);
+        Iterator<Persistence> persistences = ServiceLoader.load(Persistence.class).iterator();
+        Optional<Persistence> persistence = (persistences.hasNext() ? Optional.ofNullable(persistences.next()) : Optional.empty());
+        this.persistence = persistence.orElseThrow(RuntimeException::new);
+        Iterator<SocialMedia> socialMedias = ServiceLoader.load(SocialMedia.class).iterator();
+        this.socialMedias = StreamSupport.stream(Spliterators.spliteratorUnknownSize(socialMedias, Spliterator.ORDERED), false)
+                .collect(Collectors.toList());
     }
 
     public void post(BlogPost blogPost) {
